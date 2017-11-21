@@ -10,6 +10,8 @@ public class MainChara : MonoBehaviour {
 	protected float moveSpeed;
 	[SerializeField]
 	private float mainCharaHp;
+	[SerializeField]
+	private float bulletSpeed;
 	private const string IDLE	= "Wizard_Idle";
 	private const string RUN		= "Wizard_Run";
 	private const string ATTACK	= "Wizard_Attack";
@@ -27,6 +29,29 @@ public class MainChara : MonoBehaviour {
 		else if(movePosition.y <= -50)movePosition.y = -50;
 		mainChara.transform.LookAt(new Vector3(movePosition.x,0,movePosition.y));
     mainChara.transform.position += new Vector3(movePosition.x/moveSpeed,0,movePosition.y/moveSpeed);
+	}
+
+	/**
+	* mainCharaの魔法を打つ処理
+	*
+	*/
+	protected void attackMainChara(){
+		mainCharaAnimation(2);
+		GameObject bullet = GameObject.Find("Bullet_1");
+		Rigidbody rigid =  bullet.GetComponent<Rigidbody>();
+		rigid.AddForce(new Vector3(mainChara.transform.forward.x*bulletSpeed,0,mainChara.transform.forward.z*bulletSpeed));
+	}
+
+	/**
+	* mainCharaの弾を生成する処理
+	*/
+	protected void makeBullet(){
+		if(mainChara == null)mainChara = GameObject.Find("mainChara");
+		
+		GameObject bullet = (GameObject)Resources.Load("Bullet/Bullet_1");
+		GameObject bulletPrefab = Instantiate(bullet,new Vector3(mainChara.transform.position.x-0.9f,mainChara.transform.position.y+1,mainChara.transform.position.z+0.2f),Quaternion.identity);
+		bulletPrefab.name = "Bullet_1";
+
 	}
 
 	/**
