@@ -8,6 +8,7 @@ public class MainCharaController : MainChara {
 	private Vector2 firstPosition;
 	private Vector2 secondPosition;
 
+
 	void Start(){
 		firstPosition = new Vector2(0,0);
 		secondPosition = new Vector2(0,0);
@@ -24,12 +25,15 @@ public class MainCharaController : MainChara {
 				  break;
 				case TouchPhase.Moved:
 				  secondPosition = firstFinger.position;
+					mainCharaAnimation(1);
 					moveMainChara(secondPosition-firstPosition);
 				  break;
 				case TouchPhase.Stationary:
+				  mainCharaAnimation(1);
 				  moveMainChara(secondPosition);
 				  break;
 				case TouchPhase.Ended:
+				  mainCharaAnimation(0);
 				  break;
 			}
 		}

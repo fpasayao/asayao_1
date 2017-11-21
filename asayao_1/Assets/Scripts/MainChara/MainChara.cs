@@ -8,6 +8,11 @@ public class MainChara : MonoBehaviour {
 	protected GameObject mainChara;
 	[SerializeField]
 	protected float moveSpeed;
+	private const string IDLE	= "Wizard_Idle";
+	private const string RUN		= "Wizard_Run";
+	private const string ATTACK	= "Wizard_Attack";
+	private const string DAMAGE	= "Wizard_Damage";
+	private Animation anim;
 
 	/**
 	* mainCharaの移動処理
@@ -20,5 +25,28 @@ public class MainChara : MonoBehaviour {
 		else if(movePosition.y <= -50)movePosition.y = -50;
 		mainChara.transform.LookAt(new Vector3(movePosition.x,0,movePosition.y));
     mainChara.transform.position += new Vector3(movePosition.x/moveSpeed,0,movePosition.y/moveSpeed);
+	}
+
+	/**
+	* mainCharaのアニメーション処理
+	* @param status 実行するアニメーションの種類 0...IDLE 1...RUN 2...ATTACK 3...DAMAGE
+	*/
+	protected void mainCharaAnimation(int status){
+		anim = GetComponent<Animation>();
+		switch(status){
+			case 0:
+			  anim.CrossFade(IDLE);
+			  break;
+	    case 1:
+			  anim.CrossFade(RUN);
+			  break;
+			case 2:
+			  anim.CrossFade(ATTACK);
+			  break;
+			case 3:
+			  anim.CrossFade(DAMAGE);
+				break;
+		}
+
 	}
 }
