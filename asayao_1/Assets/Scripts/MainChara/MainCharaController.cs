@@ -17,7 +17,6 @@ public class MainCharaController : MainChara {
 	}
 
 	void Update () {
-/*
 		if(Input.touchCount > 0){
 			Touch firstFinger = Input.GetTouch(0);
 			switch(firstFinger.phase){
@@ -35,11 +34,9 @@ public class MainCharaController : MainChara {
 				  break;
 				case TouchPhase.Ended:
 				  mainCharaAnimation(0);
+					attackMainChara();
 				  break;
 			}
-		}*/
-		if(Input.GetKey("up")){
-			attackMainChara();
 		}
 	}
 }
