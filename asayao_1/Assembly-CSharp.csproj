@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AssetStore\amusedART\FantasyWizard\Script\Wizard.cs" />
+     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Scripts\MainChara\MainChara.cs" />
      <Compile Include="Assets\Scripts\MainChara\MainCharaController.cs" />
  <Reference Include="UnityEngine.UI">

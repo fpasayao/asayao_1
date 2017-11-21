@@ -11,6 +11,8 @@ public class MainCharaController : MainChara {
 	void Start(){
 		firstPosition = new Vector2(0,0);
 		secondPosition = new Vector2(0,0);
+		GameObject camera = GameObject.Find("Main Camera");
+		camera.AddComponent<CameraController>();
 	}
 
 	void Update () {
