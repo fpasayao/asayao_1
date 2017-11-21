@@ -8,6 +8,8 @@ public class MainChara : MonoBehaviour {
 	protected GameObject mainChara;
 	[SerializeField]
 	protected float moveSpeed;
+	[SerializeField]
+	private float mainCharaHp;
 	private const string IDLE	= "Wizard_Idle";
 	private const string RUN		= "Wizard_Run";
 	private const string ATTACK	= "Wizard_Attack";
@@ -25,6 +27,21 @@ public class MainChara : MonoBehaviour {
 		else if(movePosition.y <= -50)movePosition.y = -50;
 		mainChara.transform.LookAt(new Vector3(movePosition.x,0,movePosition.y));
     mainChara.transform.position += new Vector3(movePosition.x/moveSpeed,0,movePosition.y/moveSpeed);
+	}
+
+	/**
+	* hpを増やす処理
+	* @param hp 増やす量
+	*/
+	protected void plusHp(float hp){
+		mainCharaHp += hp;
+	}
+	/**
+	* hpを減らす処理
+	* @param hp 減らす量
+	*/
+	protected void minusHp(float hp){
+		mainCharaHp -= hp;
 	}
 
 	/**
@@ -47,6 +64,5 @@ public class MainChara : MonoBehaviour {
 			  anim.CrossFade(DAMAGE);
 				break;
 		}
-
 	}
 }

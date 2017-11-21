@@ -1446,6 +1446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainChara: {fileID: 1129514383732792}
   moveSpeed: 150
+  mainCharaHp: 500
 --- !u!137 &137204392806853318
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

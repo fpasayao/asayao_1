@@ -167,6 +167,11 @@ Prefab:
       propertyPath: m_Name
       value: mainChara
       objectReference: {fileID: 0}
+    - target: {fileID: 114187150373045602, guid: b6b1f846b8f014454b6a399167c23ce1,
+        type: 2}
+      propertyPath: mainCharaHp
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b6b1f846b8f014454b6a399167c23ce1, type: 2}
   m_IsPrefabParent: 0
