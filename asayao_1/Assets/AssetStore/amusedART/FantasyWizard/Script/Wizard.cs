@@ -45,23 +45,5 @@ public class Wizard : MonoBehaviour {
 	public void DeathAni (){
 		anim.CrossFade (DEATH);
 	}
-		
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
