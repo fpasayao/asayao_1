@@ -35,7 +35,7 @@ public class MainChara : MonoBehaviour {
 	* mainCharaの魔法を打つ処理
 	*
 	*/
-	protected void attackMainChara(){
+	public void attackMainChara(){
 		mainCharaAnimation(2);
 		GameObject bullet = GameObject.Find("Bullet_1");
 		Rigidbody rigid =  bullet.GetComponent<Rigidbody>();
@@ -75,7 +75,7 @@ public class MainChara : MonoBehaviour {
 	* @param status 実行するアニメーションの種類 0...IDLE 1...RUN 2...ATTACK 3...DAMAGE
 	*/
 	protected void mainCharaAnimation(int status){
-		anim = GetComponent<Animation>();
+		anim = mainChara.GetComponent<Animation>();
 		switch(status){
 			case 0:
 			  anim.CrossFade(IDLE);

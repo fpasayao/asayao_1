@@ -8,6 +8,7 @@ public class BulletController : MainChara {
 
 	// Use this for initialization
 	void Start () {
+		explosion = (GameObject)Resources.Load("Bullet/Animation/Explosion");
 
 	}
 
@@ -19,8 +20,13 @@ public class BulletController : MainChara {
 	void OnCollisionEnter(Collision obj){
 		Debug.Log("**** onCollisionenter");
 		makeBullet();
-		explosion = (GameObject)Resources.Load("Bullet/Animation/Explosion");
 		Instantiate(explosion,this.gameObject.transform.position,Quaternion.identity);
 		Destroy(this.gameObject);
+	}
+
+	public void bulletShot(){
+		Debug.Log("**** bullet shot ");
+		mainChara = GameObject.Find("mainChara");
+		attackMainChara();
 	}
 }
