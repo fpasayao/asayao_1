@@ -18,14 +18,17 @@ public class BulletController : MainChara {
 
 	}
 
-	void OnCollisionEnter(Collision obj){
-		makeBullet();
+	void OnTriggerEnter(Collider obj){
+		if(obj.gameObject.layer != this.gameObject.layer)return;
 		Instantiate(explosion,this.gameObject.transform.position,Quaternion.identity);
 		GameObject bulletShot = GameObject.Find("bulletButton");
 		bulletShot.GetComponent<BulletController>().isBulletShot = false;
 		Destroy(this.gameObject);
 	}
 
+	/**
+	* 弾を撃つ処理
+	*/
 	public void bulletShot(){
 		mainChara = GameObject.Find("mainChara");
 		if(isBulletShot == false){

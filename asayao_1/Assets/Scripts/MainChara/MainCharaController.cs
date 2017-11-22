@@ -14,9 +14,11 @@ public class MainCharaController : MainChara {
 		secondPosition = new Vector2(0,0);
 		GameObject camera = GameObject.Find("Main Camera");
 		camera.AddComponent<CameraController>();
+		
 	}
 
 	void Update () {
+		/*
 		if(Input.touchCount > 0){
 			Touch firstFinger = Input.GetTouch(0);
 			switch(firstFinger.phase){
@@ -38,5 +40,19 @@ public class MainCharaController : MainChara {
 				  break;
 			}
 		}
+		*/
+
+		//パソコン用の操作
+		Rigidbody rigid = mainChara.GetComponent<Rigidbody>();
+		if(Input.GetKey("up")){
+			rigid.AddForce(new Vector3(0,0,10));
+		}else if(Input.GetKey("down")){
+			rigid.AddForce(new Vector3(0,0,-10));
+		}else if(Input.GetKey("right")){
+			rigid.AddForce(new Vector3(10,0,0));
+		}else if(Input.GetKey("left")){
+			rigid.AddForce(new Vector3(-10,0,0));
+		}
+
 	}
 }

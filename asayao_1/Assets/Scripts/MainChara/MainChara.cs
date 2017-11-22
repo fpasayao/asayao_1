@@ -36,8 +36,10 @@ public class MainChara : MonoBehaviour {
 	*
 	*/
 	public void attackMainChara(){
+		makeBullet();
 		mainCharaAnimation(2);
 		GameObject bullet = GameObject.Find("Bullet_1");
+		bullet.layer = 8;
 		Rigidbody rigid =  bullet.GetComponent<Rigidbody>();
 		rigid.AddForce(new Vector3(mainChara.transform.forward.x*bulletSpeed,0,mainChara.transform.forward.z*bulletSpeed));
 	}
@@ -47,7 +49,6 @@ public class MainChara : MonoBehaviour {
 	*/
 	protected void makeBullet(){
 		if(mainChara == null)mainChara = GameObject.Find("mainChara");
-
 		GameObject bullet = (GameObject)Resources.Load("Bullet/Bullet_1");
 		GameObject bulletPrefab = Instantiate(bullet,new Vector3(mainChara.transform.position.x-0.9f,mainChara.transform.position.y+1,mainChara.transform.position.z+0.2f),Quaternion.identity);
     bulletPrefab.transform.SetParent(mainChara.transform);
