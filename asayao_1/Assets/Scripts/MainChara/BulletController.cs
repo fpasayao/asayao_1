@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletController : MainChara {
 	[SerializeField]
 	private GameObject explosion;
+	public bool isBulletShot = false;
 
 	// Use this for initialization
 	void Start () {
@@ -18,15 +19,18 @@ public class BulletController : MainChara {
 	}
 
 	void OnCollisionEnter(Collision obj){
-		Debug.Log("**** onCollisionenter");
 		makeBullet();
 		Instantiate(explosion,this.gameObject.transform.position,Quaternion.identity);
+		GameObject bulletShot = GameObject.Find("bulletButton");
+		bulletShot.GetComponent<BulletController>().isBulletShot = false;
 		Destroy(this.gameObject);
 	}
 
 	public void bulletShot(){
-		Debug.Log("**** bullet shot ");
 		mainChara = GameObject.Find("mainChara");
-		attackMainChara();
+		if(isBulletShot == false){
+			attackMainChara();
+		  isBulletShot = true;
+		}
 	}
 }
