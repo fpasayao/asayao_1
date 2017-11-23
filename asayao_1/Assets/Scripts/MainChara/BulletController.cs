@@ -6,6 +6,8 @@ public class BulletController : MainChara {
 	[SerializeField]
 	private GameObject explosion;
 	public bool isBulletShot = false;
+	[SerializeField]
+	private float bulletDamage;
 
 	// Use this for initialization
 	void Start () {
@@ -48,5 +50,12 @@ public class BulletController : MainChara {
 			attackMainChara();
 		  isBulletShot = true;
 		}
+	}
+
+	/**
+	* 弾の攻撃力を取得
+	*/
+	public float getBulletDamage(){
+		return this.bulletDamage;
 	}
 }

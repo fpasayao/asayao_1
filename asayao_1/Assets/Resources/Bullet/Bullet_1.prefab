@@ -284,6 +284,7 @@ MonoBehaviour:
   bulletSpeed: 0
   explosion: {fileID: 1972748692213300, guid: dfc6bdfb5409a4e9f850cc6bd4c916ee, type: 2}
   isBulletShot: 0
+  bulletDamage: 15
 --- !u!135 &135302998109002438
 SphereCollider:
   m_ObjectHideFlags: 1
