@@ -909,7 +909,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1442913890730118}
-  m_LocalRotation: {x: -0.3175857, y: 0.6317758, z: 0.63177407, w: 0.31758493}
+  m_LocalRotation: {x: -0.31758574, y: 0.63177586, z: 0.6317741, w: 0.31758496}
   m_LocalPosition: {x: -0.040354345, y: 0.0000006733832, z: 0.24000004}
   m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_Children: []
@@ -1475,7 +1475,7 @@ MonoBehaviour:
   mainChara: {fileID: 1129514383732792}
   moveSpeed: 150
   mainCharaHp: 500
-  bulletSpeed: 100
+  bulletSpeed: 200
 --- !u!137 &137311817875635292
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

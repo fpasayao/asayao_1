@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainChara : MonoBehaviour {
 
@@ -53,7 +54,12 @@ public class MainChara : MonoBehaviour {
 		GameObject bulletPrefab = Instantiate(bullet,new Vector3(mainChara.transform.position.x-0.9f,mainChara.transform.position.y+1,mainChara.transform.position.z+0.2f),Quaternion.identity);
     bulletPrefab.transform.SetParent(mainChara.transform);
 		bulletPrefab.name = "Bullet_1";
-
+		GameObject bomb = (GameObject)Resources.Load("UI/Bomb!");
+		GameObject canvas = GameObject.Find("Canvas");
+		GameObject bulletButton = GameObject.Find("bulletButton");
+		GameObject bombPrefab = Instantiate(bomb,new Vector3(bulletButton.transform.position.x,bulletButton.transform.position.y+30,bulletButton.transform.position.z),Quaternion.identity) as GameObject;
+		bombPrefab.transform.SetParent(canvas.transform);
+		bombPrefab.name = "Bomb!";
 	}
 
 	/**

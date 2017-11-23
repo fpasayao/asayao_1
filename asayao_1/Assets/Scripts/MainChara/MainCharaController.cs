@@ -14,7 +14,6 @@ public class MainCharaController : MainChara {
 		secondPosition = new Vector2(0,0);
 		GameObject camera = GameObject.Find("Main Camera");
 		camera.AddComponent<CameraController>();
-		
 	}
 
 	void Update () {

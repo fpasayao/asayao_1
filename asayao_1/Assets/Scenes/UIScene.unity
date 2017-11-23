@@ -403,6 +403,7 @@ MonoBehaviour:
   mainCharaHp: 0
   bulletSpeed: 100
   explosion: {fileID: 0}
+  isBulletShot: 0
 --- !u!1 &1089014307
 GameObject:
   m_ObjectHideFlags: 0
