@@ -54,8 +54,10 @@
      <Compile Include="Assets\AssetStore\amusedART\FantasyWizard\Script\Wizard.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyAttackController.cs" />
      <Compile Include="Assets\Scripts\Enemy\GrayEnemyController.cs" />
      <Compile Include="Assets\Scripts\Enemy\GreenEnemyController.cs" />
+     <Compile Include="Assets\Scripts\Enemy\NavmeshEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemy\RedEnemyController.cs" />
      <Compile Include="Assets\Scripts\MainChara\BulletController.cs" />
      <Compile Include="Assets\Scripts\MainChara\BulletVanish.cs" />
