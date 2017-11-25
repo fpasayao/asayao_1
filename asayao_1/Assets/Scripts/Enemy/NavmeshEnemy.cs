@@ -5,17 +5,38 @@ using UnityEngine.AI;
 
 public class NavmeshEnemy : MonoBehaviour {
 	GameObject mainChara;
+	GameObject enemy;
+	bool isNavEnemy;
 
 	// Use this for initialization
 	void Start () {
 		mainChara = GameObject.Find("mainChara");
+		enemy = this.gameObject.transform.root.gameObject;
+		isNavEnemy = false;
 
 	}
 
 	// Update is called once per frame
 	void Update () {
-		this.gameObject.GetComponent<NavMeshAgent>().SetDestination(mainChara.transform.position);
+		if(isNavEnemy == true){
+			enemy.GetComponent<NavMeshAgent>().SetDestination(mainChara.transform.position);
+		}
 
 
+	}
+
+	void OnTriggerEnter(Collider obj){
+		if(obj.gameObject.name == "collision"){
+			isNavEnemy = true;
+			enemy.GetComponent<Animator>().SetBool("isRun",true);
+		}
+	}
+
+	void OnTriggerExit(Collider obj){
+		if(obj.gameObject.name == "collision"){
+			isNavEnemy = false;
+			enemy.GetComponent<Animator>().SetBool("isRun",false);
+
+		}
 	}
 }

@@ -66,15 +66,18 @@ public class MainChara : MonoBehaviour {
 	* hpを増やす処理
 	* @param hp 増やす量
 	*/
-	protected void plusHp(float hp){
+	public void plusHp(float hp){
 		mainCharaHp += hp;
 	}
 	/**
 	* hpを減らす処理
 	* @param hp 減らす量
 	*/
-	protected void minusHp(float hp){
+	public void minusHp(float hp){
 		mainCharaHp -= hp;
+		if(mainCharaHp <= 0){
+			Debug.Log("hpがなくなりました");
+		}
 	}
 
 	/**

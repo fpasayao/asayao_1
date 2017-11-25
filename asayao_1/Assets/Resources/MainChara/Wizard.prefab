@@ -1435,7 +1435,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1520689197855900}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 2}
@@ -1474,7 +1474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainChara: {fileID: 1129514383732792}
   moveSpeed: 150
-  mainCharaHp: 500
+  mainCharaHp: 50
   bulletSpeed: 200
 --- !u!137 &137311817875635292
 SkinnedMeshRenderer:

@@ -20,6 +20,8 @@ public class EnemyAttackController : MonoBehaviour {
 	void OnTriggerEnter(Collider obj){
 		if(obj.name == "collision" && iscollision==false){
 			iscollision = true;
+			GameObject mainChara = obj.gameObject.transform.root.gameObject;
+			mainChara.GetComponent<MainCharaController>().minusHp(10);
 		}
 	}
 }
