@@ -399,7 +399,6 @@ GameObject:
   - component: {fileID: 65471567349153936}
   - component: {fileID: 114015568606269124}
   - component: {fileID: 195293363979742832}
-  - component: {fileID: 114998439730056360}
   m_Layer: 8
   m_Name: Polo_Red
   m_TagString: Untagged
@@ -581,6 +580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4356713843186954}
   - component: {fileID: 135696885933140758}
+  - component: {fileID: 114210319030790026}
   m_Layer: 8
   m_Name: Attack_Decision
   m_TagString: Untagged
@@ -1162,12 +1162,12 @@ MonoBehaviour:
   enemyHp: 100
   enemyObject: {fileID: 1670927802597752}
   arm: {fileID: 1743623613504664}
---- !u!114 &114998439730056360
+--- !u!114 &114210319030790026
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1670927802597752}
+  m_GameObject: {fileID: 1956769794657538}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca2f89b73f06b4a7e83b1e61adb73647, type: 3}
@@ -1260,7 +1260,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

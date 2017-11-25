@@ -20,6 +20,8 @@ public class NavmeshEnemy : MonoBehaviour {
 	void Update () {
 		if(isNavEnemy == true){
 			enemy.GetComponent<NavMeshAgent>().SetDestination(mainChara.transform.position);
+		}else{
+			enemy.GetComponent<NavMeshAgent>().SetDestination(enemy.transform.position);
 		}
 
 
